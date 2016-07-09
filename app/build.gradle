@@ -14,16 +14,43 @@ android {
         versionName "${VERSION_NAME}"
     }
 
+    signingConfigs {
+        release {
+            def storeFileValue = ""
+            def storePasswordValue = ""
+            def keyAliasValue = ""
+            def keyPasswordValue = ""
+
+            if (new File('local.properties').exists()) {
+                Properties properties = new Properties()
+                properties.load(project.rootProject.file('local.properties').newDataInputStream())
+                storeFileValue = properties.getProperty("store.file")
+                storePasswordValue = properties.getProperty("store.password")
+                keyAliasValue = properties.getProperty("key.alias")
+                keyPasswordValue = properties.getProperty("key.password")
+            }
+
+            storeFile file("${storeFileValue}")
+            storePassword "${storePasswordValue}"
+            keyAlias "${keyAliasValue}"
+            keyPassword "${keyPasswordValue}"
+        }
+        debug {
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
         debug {
             minifyEnabled false
             zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
 

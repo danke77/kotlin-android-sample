@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.danke.contacts">
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.danke.contacts">
 
     <application
         android:allowBackup="true"

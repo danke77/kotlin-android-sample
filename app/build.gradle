@@ -58,6 +58,32 @@ android {
         incremental true
         javaMaxHeapSize "2048M"
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java', '.apt_generated']
+            aidl.srcDirs = ['src/main/aidl', '.apt_generated']
+            assets.srcDirs = ['src/main/assets']
+            res.srcDirs =
+                    [
+                            'src/main/res/layouts/contacts',
+                            'src/main/res/layouts/main',
+                            'src/main/res/layouts',
+                            'src/main/res'
+                    ]
+        }
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    packagingOptions {
+        exclude('META-INF/LICENSE.txt')
+        exclude('META-INF/NOTICE.txt')
+    }
 }
 
 dependencies {

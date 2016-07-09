@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <!-- primary -->
+    <color name="colorPrimary">#673AB7</color>
+    <color name="colorPrimaryLight">#D1C4E9</color>
+    <color name="colorPrimaryDark">#512DA8</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#727272</color>
+    <color name="colorDivider">#B6B6B6</color>
+
+    <!-- dialog -->
+    <color name="dialog_title">@color/colorAccent</color>
+    <color name="dialog_content">@color/textPrimary</color>
+    <color name="dialog_divider">@color/colorPrimary</color>
+    <color name="dialog_positive">@color/colorPrimary</color>
+    <color name="dialog_neutral">@color/textPrimary</color>
+    <color name="dialog_negative">@color/textSecondary</color>
+    <color name="dialog_widget">@color/colorPrimary</color>
+    <color name="dialog_button_ripple">@color/colorDivider</color>
+
+    <!-- refresh color scheme -->
+    <color name="refresh_color_scheme_0">@color/colorAccent</color>
+    <color name="refresh_color_scheme_1">@color/colorPrimary</color>
+
+    <!-- toolbar -->
+    <color name="toolbar_search_text_color">@android:color/white</color>
+    <color name="toolbar_search_text_hint_color">#e6e6e6</color>
+
+    <!-- common -->
+    <color name="window_background">#FFF5F5F5</color>
+    <color name="item_text">@color/textPrimary</color>
+    <color name="item_text_sub">@color/textSecondary</color>
+    <color name="item_text_settings">@color/textSecondary</color>
+    <color name="item_text_tip">@color/textSecondary</color>
+    <color name="item_separate_line">@color/colorDivider</color>
+
 </resources>

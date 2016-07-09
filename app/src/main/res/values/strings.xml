@@ -1,3 +1,72 @@
 <resources>
     <string name="app_name">KContacts</string>
+
+    <!-- common -->
+    <string name="action_search">搜索</string>
+    <string name="action_edit">编辑</string>
+    <string name="action_done">完成</string>
+    <string name="action_setting">设置</string>
+    <string name="tip">提示</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="ok">好的</string>
+    <string name="common_hint">未填写</string>
+    <string name="edit_success">修改成功</string>
+
+    <!-- version -->
+    <string name="youzan_copyright">©2012&#8211;2016 Youzan.com</string>
+    <string name="youzan_version">" %s 版本"</string>
+
+    <!-- search -->
+    <string name="search_user_hint">拼音/姓名/昵称/手机号/Email</string>
+
+    <!-- action -->
+    <string name="call_phone">将拨打电话：</string>
+    <string name="send_email">请选择邮件发送软件</string>
+    <string name="no_email_client">未检测到邮件客户端</string>
+
+    <!-- permission -->
+    <string name="permission_cancel">权限被取消</string>
+    <string name="permission_rationale_call_phone">是否允许使用拨打电话和管理通话功能？</string>
+
+    <!-- login -->
+    <string name="login">登录</string>
+    <string name="login_account_hint">用户名</string>
+    <string name="login_password_hint">密码</string>
+    <string name="forget_password">忘记密码？</string>
+    <string name="login_account_invalid_tip">用户名不能为空</string>
+    <string name="login_password_invalid_tip">密码不能为空</string>
+
+    <!-- contacts -->
+    <string name="contacts">通讯录</string>
+
+    <!-- userInfo -->
+    <string name="mobile">手机</string>
+    <string name="email">邮箱</string>
+    <string name="department">部门</string>
+    <string name="position">职位</string>
+    <string name="birthday">生日</string>
+    <string name="join_date">入职时间</string>
+    <string name="sex">性别</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+
+    <!-- settings -->
+    <string name="personal_settings">个人信息设置</string>
+    <string name="security_logout">安全退出</string>
+    <string name="confirm_logout">确定要退出吗？</string>
+
+    <!-- request -->
+    <string name="msg_request_failed">服务器请求失败，请重试</string>
+    <string name="msg_request_timeout_error">请求超时，请重试</string>
+    <string name="msg_request_response_error">数据获取失败，请重试</string>
+    <string name="msg_request_network_error">网络错误，请重试</string>
+
+    <!-- photo -->
+    <string name="take_photo">拍照</string>
+    <string name="select_from_album">从相册中选择</string>
+    <string name="sdcard_disable">存储卡不可用</string>
+    <string name="camera_disable">摄像头不可用</string>
+    <string name="uploading_images">正在上传图片</string>
+    <string name="upload_images_success">上传成功</string>
 </resources>

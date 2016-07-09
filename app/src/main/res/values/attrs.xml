@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- SwipeBackLayout -->
+    <declare-styleable name="SwipeBackLayout">
+        <attr name="edge_size" format="dimension"/>
+        <attr name="edge_flag">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+            <enum name="bottom" value="2"/>
+            <enum name="all" value="3"/>
+        </attr>
+        <attr name="shadow_left" format="reference"/>
+        <attr name="shadow_right" format="reference"/>
+        <attr name="shadow_bottom" format="reference"/>
+    </declare-styleable>
+
+    <attr name="SwipeBackLayoutStyle" format="reference"/>
+
+    <!-- ProgressWheel -->
+    <declare-styleable name="ProgressWheel">
+        <attr name="progressIndeterminate" format="boolean"/>
+        <attr name="barColor" format="color"/>
+        <attr name="rimColor" format="color"/>
+        <attr name="rimWidth" format="dimension"/>
+        <attr name="spinSpeed" format="float"/>
+        <attr name="barSpinCycleTime" format="integer"/>
+        <attr name="circleRadius" format="dimension"/>
+        <attr name="fillRadius" format="boolean"/>
+        <attr name="barWidth" format="dimension"/>
+        <attr name="linearProgress" format="boolean"/>
+    </declare-styleable>
+
+    <!-- TextAvatar -->
+    <declare-styleable name="TextAvatar">
+        <attr name="avatarTextColor" format="color"/>
+        <attr name="avatarTextSize" format="dimension"/>
+        <attr name="avatarTextBackground" format="reference|color"/>
+    </declare-styleable>
+
+    <!-- ItemView -->
+    <declare-styleable name="ItemView">
+        <attr name="itemText" format="string"/>
+        <attr name="itemSubText" format="string"/>
+        <attr name="itemButtonLeft" format="reference"/>
+        <attr name="itemButtonRight" format="reference"/>
+    </declare-styleable>
+
+    <!-- BezelImageView -->
+    <declare-styleable name="BezelImageView">
+        <attr name="maskDrawable" format="reference"/>
+        <attr name="borderDrawable" format="reference"/>
+        <attr name="desaturateOnPress" format="boolean"/>
+    </declare-styleable>
+
+    <!-- NumberTextTextView -->
+    <declare-styleable name="NumberTextTextView">
+        <attr name="typeface" format="string"/>
+    </declare-styleable>
+
+    <!-- RoundProgressBar -->
+    <declare-styleable name="RoundProgressBar">
+        <attr name="roundColor" format="color"/>
+        <attr name="roundProgressColor" format="color"/>
+        <attr name="roundWidth" format="dimension"/>
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="max" format="integer" />
+        <attr name="textIsDisplayable" format="boolean"/>
+        <attr name="style">
+            <enum name="STROKE" value="0"/>
+            <enum name="FILL" value="1"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

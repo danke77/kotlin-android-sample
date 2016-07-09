@@ -1,11 +1,63 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <!-- widget -->
+    <style name="Widget.CardContent" parent="android:Widget">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- textView -->
+    <style name="singleLineTextView">
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="commonSingleLineTextView" parent="@style/singleLineTextView">
+        <item name="android:textColor">@color/item_text</item>
+        <item name="android:textSize">@dimen/item_text</item>
+    </style>
+
+    <style name="descSingleLineTextView" parent="@style/singleLineTextView">
+        <item name="android:textColor">@color/item_text_sub</item>
+        <item name="android:textSize">@dimen/item_text_desc</item>
+    </style>
+
+    <!-- line -->
+    <style name="commonHorizontalLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/common_line_width</item>
+        <item name="android:background">@color/item_separate_line</item>
+    </style>
+
+    <style name="commonVerticalLine">
+        <item name="android:layout_width">@dimen/common_line_width</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/item_separate_line</item>
+    </style>
+
+    <!-- SwipeBackLayout -->
+    <style name="SwipeBackLayout">
+        <item name="edge_size">0dp</item>
+    </style>
+
+    <style name="CustomDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!--边框-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">true</item>
+        <!--半透明-->
+        <item name="android:windowNoTitle">true</item>
+        <!--无标题-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--模糊-->
     </style>
 
 </resources>

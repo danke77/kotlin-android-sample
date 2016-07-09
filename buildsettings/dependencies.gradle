@@ -1,0 +1,46 @@
+ext {
+    //Android
+    androidBuildToolsV = '24.0.0'
+    androidMinSdkV = 15
+    androidTargetSdkV = 24
+    androidCompileSdkV = 24
+
+    //Android Support Libs
+    appCompatV7V = '24.0.0'
+    supportV13V = '24.0.0'
+    supportDesignV = '24.0.0'
+
+    androidDependencies = [
+            appcompatV7  : "com.android.support:appcompat-v7:${appCompatV7V}",
+            supportV13   : "com.android.support:support-v13:${supportV13V}",
+            supportDesign: "com.android.support:design:${supportDesignV}"
+    ]
+
+    //Kotlin
+    kotlinV = '1.0.1-2'
+    ankoV = '0.8.2'
+
+    kotlinDependencies = [
+            kotlinStdlib: "org.jetbrains.kotlin:kotlin-stdlib:${kotlinV}",
+            ankoCommon  : "org.jetbrains.anko:anko-common:${ankoV}",
+            ankoSqlite  : "org.jetbrains.anko:anko-sqlite:${ankoV}"
+    ]
+
+    //Third Libs
+    gsonV = '2.6.2'
+    circleIamgeViewV = '2.1.0'
+    glideV = '3.7.0'
+
+    thirdDependencies = [
+            gson           : "com.google.code.gson:gson:${gsonV}",
+            circleIamgeView: "de.hdodenhof:circleimageview:${circleIamgeViewV}",
+            glide          : "com.github.bumptech.glide:glide:${glideV}"
+    ]
+
+    //Android Test Libs
+    testJUnitV = "4.12"
+
+    testDependencies = [
+            junit: "junit:junit:${testJUnitV}",
+    ]
+}

@@ -17,7 +17,7 @@ abstract class AbsBackActivity : AbsToolbarActivity() {
 
     override fun toggleOverridePendingTransition() = false
 
-    override fun getOverridePendingTransitionMode() = TransitionMode.RIGHT
+    override fun getOverridePendingTransitionMode() = TransitionMode.END
 
     protected fun onActionBack() {
         onBackPressed()

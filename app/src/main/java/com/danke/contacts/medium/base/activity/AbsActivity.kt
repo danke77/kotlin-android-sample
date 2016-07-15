@@ -2,10 +2,12 @@ package com.danke.contacts.medium.base.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import com.danke.contacts.R
-import kotlinx.android.synthetic.main.progress_layout.*
 
 /**
  * @author danke (https://github.com/danke77)
@@ -19,8 +21,8 @@ abstract class AbsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         if (toggleOverridePendingTransition()) {
             when (getOverridePendingTransitionMode()) {
-                TransitionMode.LEFT -> overridePendingTransition(R.anim.left_in, R.anim.left_out)
-                TransitionMode.RIGHT -> overridePendingTransition(R.anim.right_in, R.anim.right_out)
+                TransitionMode.START -> overridePendingTransition(R.anim.left_in, R.anim.left_out)
+                TransitionMode.END -> overridePendingTransition(R.anim.right_in, R.anim.right_out)
                 TransitionMode.TOP -> overridePendingTransition(R.anim.top_in, R.anim.top_out)
                 TransitionMode.BOTTOM -> overridePendingTransition(R.anim.bottom_in, R.anim.bottom_out)
                 TransitionMode.SCALE -> overridePendingTransition(R.anim.scale_in, R.anim.scale_out)
@@ -44,8 +46,8 @@ abstract class AbsActivity : AppCompatActivity() {
 
         if (toggleOverridePendingTransition()) {
             when (getOverridePendingTransitionMode()) {
-                TransitionMode.LEFT -> overridePendingTransition(R.anim.left_in, R.anim.left_out)
-                TransitionMode.RIGHT -> overridePendingTransition(R.anim.right_in, R.anim.right_out)
+                TransitionMode.START -> overridePendingTransition(R.anim.left_in, R.anim.left_out)
+                TransitionMode.END -> overridePendingTransition(R.anim.right_in, R.anim.right_out)
                 TransitionMode.TOP -> overridePendingTransition(R.anim.top_in, R.anim.top_out)
                 TransitionMode.BOTTOM -> overridePendingTransition(R.anim.bottom_in, R.anim.bottom_out)
                 TransitionMode.SCALE -> overridePendingTransition(R.anim.scale_in, R.anim.scale_out)
@@ -57,36 +59,30 @@ abstract class AbsActivity : AppCompatActivity() {
     }
 
     fun showProgressBar() {
-        //        if (mProgressView == null) {
-        //            mProgressView = LayoutInflater.from(this).inflate(R.layout.progress_layout, null)
-        //            mRootView = window.decorView as ViewGroup
-        //
-        //            val layoutParams = FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT)
-        //            layoutParams.gravity = Gravity.CENTER
-        //            mRootView?.addView(mProgressView, layoutParams)
-        //        }
+        if (mProgressView == null) {
+            mRootView = window.decorView as ViewGroup
+            mProgressView = LayoutInflater.from(this).inflate(R.layout.progress_layout, null)
 
-        progressLayout?.visibility = View.VISIBLE
+            val layoutParams = FrameLayout.LayoutParams(FrameLayout.LayoutParams.WRAP_CONTENT, FrameLayout.LayoutParams.WRAP_CONTENT)
+            layoutParams.gravity = Gravity.CENTER
+            mRootView?.addView(mProgressView, layoutParams)
+        }
     }
 
     fun dismissProgressBar() {
-        //        if (mRootView != null && mProgressView != null) {
-        //            mRootView!!.removeView(mProgressView)
-        //        }
-        //
-        //        mProgressView = null
-        //        mRootView = null
+        if (mRootView != null && mProgressView != null) {
+            mRootView!!.removeView(mProgressView)
+        }
 
-        progressLayout?.postDelayed({
-            progressLayout?.visibility = View.GONE
-        }, 500)
+        mProgressView = null
+        mRootView = null
     }
 
     /**
      * overridePendingTransition mode
      */
     enum class TransitionMode {
-        LEFT, RIGHT, TOP, BOTTOM, SCALE, FADE, NONE
+        START, END, TOP, BOTTOM, SCALE, FADE, NONE
     }
 
     /**

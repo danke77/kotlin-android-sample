@@ -55,8 +55,6 @@
             android:layout_height="match_parent"
             android:layout_gravity="end|center"/>
 
-        <include layout="@layout/progress_layout"/>
-
     </FrameLayout>
 
     <android.support.design.widget.FloatingActionButton

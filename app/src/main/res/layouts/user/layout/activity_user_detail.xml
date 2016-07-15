@@ -140,6 +140,4 @@
         app:layout_anchor="@id/userDetailAppbar"
         app:layout_anchorGravity="bottom|right|end"/>
 
-    <include layout="@layout/progress_layout"/>
-
 </android.support.design.widget.CoordinatorLayout>

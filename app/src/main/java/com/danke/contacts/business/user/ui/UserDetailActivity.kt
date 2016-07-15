@@ -1,12 +1,10 @@
 package com.danke.contacts.business.user.ui
 
 import android.Manifest
-import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.inputmethod.InputMethodManager
 import com.danke.contacts.R
 import com.danke.contacts.business.user.constant.Sex
 import com.danke.contacts.business.user.entity.UserInfoEntity
@@ -24,19 +22,9 @@ import pub.devrel.easypermissions.EasyPermissions
 class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCallbacks {
 
     private var mUserInfo: UserInfoEntity? = null
-    private var mUserId: Long = 0;
-    private var mEditStatus: Boolean = false//是否处于正在编辑状态
-    private var mIsRequest: Boolean = false
-    private var mPhotoPath: String = ""
-
-    private var mImm: InputMethodManager? = null
 
     companion object {
-        val EXTRA_USER_ID = "UserDetailActivity:USER_ID"
         val EXTRA_USER_INFO = "UserDetailActivity:USER_INFO"
-        const private val UPLOAD_IMAGE: Int = 0
-        const private val REQUEST_CODE_PICTURE_SELECTED: Int = 0x10
-        const private val REQUEST_CODE_CROP_SELECTED_URIS: Int = 0x14
         const private val PERMISSION_RC_CALL_PHONE: Int = 100
     }
 
@@ -44,32 +32,24 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_detail)
 
-        mImm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        mUserInfo = intent.getParcelableExtra(EXTRA_USER_INFO)
 
-        mUserId = intent.getLongExtra(EXTRA_USER_ID, 0)
-        getUserInfo()
-
+        initCollapsingToolbarLayout()
+        loadBackdrop()
+        initUserInfo()
+        initAction()
     }
 
-    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
-        menu?.clear()
-//        if (canEditUserInfo()) {
-//            menuInflater.inflate(if (mEditStatus) {
-//                R.menu.done
-//            } else {
-//                R.menu.edit
-//            }, menu)
-//        }
-        return super.onPrepareOptionsMenu(menu)
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.done, menu)
+        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.action_edit -> {
-                onEditStatusChanged(true)
-            }
-            R.id.action_done -> {
-                //requestEditUserInfo()
+                //share
             }
             else -> super.onOptionsItemSelected(item)
         }
@@ -78,28 +58,6 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
 
     override fun isStatusBarTransparent() = true
 
-    private fun getUserInfo() {
-//        UserTask().requestUserDetail(this, mUserId, object : BaseTaskCallback<UserInfoEntity>() {
-//            override fun onResponse(userInfoEntity: UserInfoEntity?, code: Int) {
-//                mUserInfo = userInfoEntity
-//                initCollapsingToolbarLayout()
-//                loadBackdrop()
-//                initUserInfo()
-//                initAction()
-//                invalidateOptionsMenu()
-//            }
-//
-//            override fun onBefore(api: RequestApi?) {
-//                super.onBefore(api)
-//                showProgressBar()
-//            }
-//
-//            override fun onAfter() {
-//                super.onAfter()
-//                dismissProgressBar()
-//            }
-//        })
-    }
 
     private fun initCollapsingToolbarLayout() {
         userDetailCollapsingToolbar.title = mUserInfo?.nickname
@@ -134,37 +92,21 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
         })
     }
 
-    private fun enableRequest(enable: Boolean) {
-        mIsRequest = enable
-    }
-
-    private fun onEditStatusChanged(editState: Boolean) {
-        mEditStatus = editState
-        invalidateOptionsMenu()
-
-        if (mEditStatus) {
-            userMobile.openItemEdit()
-        } else {
-            hideSoftInput(mImm, userMobile)
-            userMobile.closeItemEdit()
-        }
-    }
-
     @AfterPermissionGranted(PERMISSION_RC_CALL_PHONE)
     private fun makePhoneCall() {
         if (EasyPermissions.hasPermissions(this, Manifest.permission.CALL_PHONE)) {
             if (!"".equals(mUserInfo?.mobile)) {
-//                showDialog(this)
-//                        .title(R.string.tip)
-//                        .content(getString(R.string.call_phone) + mUserInfo?.mobile)
-//                        .positiveText(R.string.confirm)
-//                        .negativeText(R.string.cancel)
-//                        .onPositive {
-//                            materialDialog, dialogAction ->
-//                            actionMakePhoneCall(this, mUserInfo?.mobile!!)
-//                        }
-//                        .cancelable(true)
-//                        .show()
+                showDialog(this)
+                        .title(R.string.tip)
+                        .content(getString(R.string.call_phone) + mUserInfo?.mobile)
+                        .positiveText(R.string.confirm)
+                        .negativeText(R.string.cancel)
+                        .onPositive {
+                            materialDialog, dialogAction ->
+                            actionMakePhoneCall(this, mUserInfo?.mobile!!)
+                        }
+                        .cancelable(true)
+                        .show()
             }
         } else {
             EasyPermissions.requestPermissions(this,

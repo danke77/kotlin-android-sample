@@ -20,7 +20,9 @@ class UserSearchActivity : AbsSearchActivity() {
         toolbarTitle = getString(R.string.action_search)
 
         mUserListFragment = UserListFragment.newInstance()
-        fragmentManager.beginTransaction().replace(R.id.common_fragment_container, mUserListFragment).commit()
+        fragmentManager.beginTransaction().
+                replace(R.id.common_fragment_container, mUserListFragment).
+                commitAllowingStateLoss()
     }
 
     override fun getSearchViewQueryHint(): String = getString(R.string.search_user_hint)

@@ -27,11 +27,6 @@
         </activity>
 
         <activity
-            android:name=".business.search.ui.SearchActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Swipe"/>
-
-        <activity
             android:name=".business.user.ui.UserSearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Swipe"/>

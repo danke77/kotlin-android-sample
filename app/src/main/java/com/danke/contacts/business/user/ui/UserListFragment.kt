@@ -13,6 +13,7 @@ import com.danke.contacts.medium.base.fragment.AbsFragment
 import com.danke.contacts.medium.component.recycler.WrapContentLinearLayoutManager
 import com.youzan.titan.divider.HorizontalDivider
 import kotlinx.android.synthetic.main.fragment_user_list.*
+import org.jetbrains.anko.startActivity
 import java.util.*
 
 /**
@@ -43,7 +44,7 @@ class UserListFragment private constructor() : AbsFragment() {
         userInfoRecyclerView.addItemDecoration(HorizontalDivider.Builder(mAttachActivity).colorResId(R.color.item_separate_line).build())
 
         mDefaultUserInfoAdapter = DefaultUserInfoAdapter(mAttachActivity!!) {
-            //startActivity<UserDetailActivity>(Pair(UserDetailActivity.EXTRA_USER_ID, it.userId))
+            startActivity<UserDetailActivity>(Pair(UserDetailActivity.EXTRA_USER_INFO, it))
         }
         userInfoRecyclerView.adapter = mDefaultUserInfoAdapter
     }

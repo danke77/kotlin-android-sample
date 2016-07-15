@@ -10,7 +10,7 @@ class HandlerUtil {
 
     private var callBack: HandlerCallBack? = null
 
-    private val handler = Handler(android.os.Handler.Callback { msg ->
+    private val handler = Handler(Handler.Callback { msg ->
         when (msg.what) {
             HANDLE_MESSAGE_THREAD_RUN -> if (null != callBack) {
                 callBack!!.handlerCallBack(msg.obj)

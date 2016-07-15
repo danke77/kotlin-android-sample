@@ -10,7 +10,7 @@ import android.view.View
 import android.widget.TextView
 import com.danke.contacts.R
 import com.danke.contacts.medium.extensions.color
-import com.danke.contacts.medium.extensions.dip2px
+import com.danke.contacts.medium.extensions.dp2px
 
 
 class SideBar : View {
@@ -45,7 +45,7 @@ class SideBar : View {
             mPaint.color = color(R.color.colorPrimaryLight)
             mPaint.typeface = Typeface.DEFAULT_BOLD
             mPaint.isAntiAlias = true
-            mPaint.textSize = dip2px(context, 12.0).toFloat()
+            mPaint.textSize = dp2px(context, 12.0).toFloat()
 
             if (i == mChoose) {
                 mPaint.color = color(R.color.colorPrimary)

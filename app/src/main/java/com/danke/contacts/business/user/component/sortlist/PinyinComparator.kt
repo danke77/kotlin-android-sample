@@ -14,17 +14,6 @@ class PinyinComparator : Comparator<UserInfoEntity> {
     override fun compare(o1: UserInfoEntity?, o2: UserInfoEntity?): Int = sort(o1, o2)
 
     private fun sort(o1: UserInfoEntity?, o2: UserInfoEntity?): Int {
-        //        // 获取ascii值
-        //        val sell_o1 = o1.userNamePinYinFirstLetter.toUpperCase()[0].toInt()
-        //        val sell_o2 = o2.userNamePinYinFirstLetter.toUpperCase()[0].toInt()
-        //        // 判断若不是字母，则排在字母之后
-        //        if (sell_o1 < 65 || sell_o1 > 90)
-        //            return 1;
-        //        else if (sell_o2 < 65 || sell_o2 > 90)
-        //            return -1;
-        //        else
-        //            return o1.userNamePinYin.compareTo(o2.userNamePinYin);
-
         if (null == o1 || null == o2) {
             return -1
         }

@@ -11,7 +11,7 @@ import java.util.*
  */
 class KContactsApp : Application() {
 
-    var userList: List<UserInfoEntity> = ArrayList()
+    val userList: List<UserInfoEntity> = ArrayList()
 
     companion object {
         var instance: KContactsApp by DelegatesExt.notNullSingleValue()

@@ -28,10 +28,11 @@ data class UserInfoEntity(
             !"".equals(query)
                     && (userNamePinYin.contains(query)
                     || nicknamePinYin.contains(query)
-                    || nickname.contains(query)
                     || username.contains(query)
+                    || nickname.contains(query)
                     || mobile.contains(query)
-                    || email.contains(query))
+                    || email.contains(query)
+                    || description.contains(query))
 
     constructor(parcelIn: Parcel) : this() {
         this.userId = parcelIn.readLong()
@@ -64,7 +65,6 @@ data class UserInfoEntity(
     }
 
     companion object {
-        @JvmField
-        val CREATOR = createParcel { UserInfoEntity(it) }
+        @JvmField val CREATOR = createParcel { UserInfoEntity(it) }
     }
 }

@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import com.danke.contacts.R
+import com.danke.contacts.business.KContactsApp
 import com.danke.contacts.business.user.adapter.ContactsUserInfoAdapter
 import com.danke.contacts.business.user.component.sortlist.CharacterParser
 import com.danke.contacts.business.user.component.sortlist.OnTouchingLetterChangedListener
@@ -14,6 +15,7 @@ import com.danke.contacts.business.user.entity.UserInfoEntity
 import com.danke.contacts.medium.base.activity.AbsToolbarActivity
 import com.danke.contacts.medium.component.recycler.WrapContentLinearLayoutManager
 import com.danke.contacts.medium.extensions.getObjectListFromJsonArray
+import com.danke.contacts.medium.extensions.startActivity
 import com.danke.contacts.medium.utils.HandlerUtil
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
@@ -45,12 +47,12 @@ class KContactsActivity : AbsToolbarActivity() {
         mPinyinParser = CharacterParser.getInstance()
 
         initToolbar()
-
         initFab()
-
         initSwipeRefreshLayout()
         initRecyclerView()
         initSideBar()
+
+        updateUserInfoList()
 
     }
 
@@ -67,7 +69,7 @@ class KContactsActivity : AbsToolbarActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.action_search -> {
-                //startActivity<UserSearchActivity>()
+                startActivity<UserSearchActivity>()
             }
             else -> super.onOptionsItemSelected(item)
         }
@@ -94,8 +96,8 @@ class KContactsActivity : AbsToolbarActivity() {
     }
 
     private fun initSwipeRefreshLayout() {
-        contactsContainer.setColorSchemeResources(R.color.refresh_color_scheme_0)
-        contactsContainer.setOnRefreshListener { requestUserInfoList() }
+        contactsContainer.setColorSchemeResources(R.color.refresh_color_scheme_0, R.color.refresh_color_scheme_1)
+        contactsContainer.setOnRefreshListener { updateUserInfoList() }
     }
 
     private fun initRecyclerView() {
@@ -103,7 +105,7 @@ class KContactsActivity : AbsToolbarActivity() {
         contactsRecyclerView.layoutManager = mLinearLayoutManager
 
         mContactsUserInfoAdapter = ContactsUserInfoAdapter(this) {
-            //startActivity<UserDetailActivity>(Pair(UserDetailActivity.EXTRA_USER_ID, it.userId))
+            startActivity<UserDetailActivity>(Pair(UserDetailActivity.EXTRA_USER_INFO, it))
         }
         contactsRecyclerView.adapter = mContactsUserInfoAdapter
     }
@@ -122,34 +124,35 @@ class KContactsActivity : AbsToolbarActivity() {
     }
 
     private fun loadStart() {
-//        mLoadSuccess = false
-//        if (mFirstLoad) {
-//            contactsContainer.isEnabled = false
-//            (mAttachActivity as AbsActivity).showProgressBar()
-//        } else {
-//            contactsContainer.isEnabled = true
-//        }
+        mLoadSuccess = false
+        if (mFirstLoad) {
+            contactsContainer.isEnabled = false
+            showProgressBar()
+        } else {
+            contactsContainer.isEnabled = true
+        }
     }
 
     private fun loadEnd() {
-//        if (mFirstLoad) {
-//            mFirstLoad = false
-//            contactsContainer.isEnabled = true
-//            (mAttachActivity as AbsActivity).dismissProgressBar()
-//        } else {
-//            contactsContainer.isRefreshing = false
-//        }
+        if (mFirstLoad) {
+            mFirstLoad = false
+            contactsContainer.isEnabled = true
+            dismissProgressBar()
+        } else {
+            contactsContainer.isRefreshing = false
+        }
     }
 
-    private fun requestUserInfoList() {
-        val jsonString : String = "{\"id\":1,\"username\":\"asdgqwrg\",\"nickname\":\"asdgqwrg\",\"avatar\":\"\",\"birthday\":\"2016-01-22\",\"sex\":0,\"email\":\"email\",\"mobile\":\"12314141241\" }"
-        val parser : JsonParser = JsonParser()
-        val jsonObject : JsonObject = parser.parse(jsonString).asJsonObject
-        val jsonArray : JsonArray = JsonArray()
-        for (i in 0..100){
+    private fun updateUserInfoList() {
+        val jsonString: String = "{\"id\":1,\"username\":\"asdgqwrg\",\"nickname\":\"asdgqwrg\",\"avatar\":\"\",\"birthday\":\"2016-01-22\",\"sex\":0,\"email\":\"email\",\"mobile\":\"12314141241\" }"
+        val parser: JsonParser = JsonParser()
+        val jsonObject: JsonObject = parser.parse(jsonString).asJsonObject
+        val jsonArray: JsonArray = JsonArray()
+        for (i in 0..100) {
             jsonArray.add(jsonObject)
         }
 
+        loadStart()
 
         HandlerUtil().handle<UserInfoEntity>(object : HandlerUtil.HandlerCallBack {
             override fun <T> threadRun(): List<T> {
@@ -163,8 +166,9 @@ class KContactsActivity : AbsToolbarActivity() {
             }
 
             override fun handlerCallBack(obj: Any) {
-                //YrApp.instance.userList = obj as List<UserInfoEntity>
-                mContactsUserInfoAdapter?.data = obj as List<UserInfoEntity>
+                KContactsApp.instance.userList = obj as List<UserInfoEntity>
+                mContactsUserInfoAdapter?.data = KContactsApp.instance.userList
+                loadEnd()
             }
         })
     }

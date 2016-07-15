@@ -33,6 +33,7 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
 
     companion object {
         val EXTRA_USER_ID = "UserDetailActivity:USER_ID"
+        val EXTRA_USER_INFO = "UserDetailActivity:USER_INFO"
         const private val UPLOAD_IMAGE: Int = 0
         const private val REQUEST_CODE_PICTURE_SELECTED: Int = 0x10
         const private val REQUEST_CODE_CROP_SELECTED_URIS: Int = 0x14

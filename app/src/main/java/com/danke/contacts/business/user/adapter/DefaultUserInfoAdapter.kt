@@ -18,7 +18,8 @@ import kotlinx.android.synthetic.main.user_list_item.view.*
  * @author danke (https://github.com/danke77)
  * @date 16/7/9
  */
-open class DefaultUserInfoAdapter(val context: Context, val hasCatalog: Boolean = false, val itemClick: (UserInfoEntity) -> Unit) :
+open class DefaultUserInfoAdapter(val context: Context, val hasCatalog: Boolean = false,
+                                  val itemClick: (UserInfoEntity) -> Unit) :
         TitanAdapter<UserInfoEntity>() {
 
     private val mTypedValue = TypedValue()
@@ -44,8 +45,9 @@ open class DefaultUserInfoAdapter(val context: Context, val hasCatalog: Boolean 
 
     class ViewHolder(view: View, val itemClick: (UserInfoEntity) -> Unit) : RecyclerView.ViewHolder(view) {
 
-        fun bindUserInfo(defaultUserInfoAdapter: DefaultUserInfoAdapter, position: Int, mData: List<UserInfoEntity>) {
-            with(mData[position]) {
+        fun bindUserInfo(defaultUserInfoAdapter: DefaultUserInfoAdapter,
+                         position: Int, data: List<UserInfoEntity>) {
+            with(data[position]) {
                 itemView.userInfoLayout.setBackgroundResource(defaultUserInfoAdapter.mBackground)
                 itemView.userAvatar.setAvatar(avatar, nickname)
                 itemView.userName.text = nickname
@@ -59,7 +61,7 @@ open class DefaultUserInfoAdapter(val context: Context, val hasCatalog: Boolean 
 
                 val currentStr = getFirstLetter(nicknamePinYin)
                 val previewStr = if (position - 1 >= 0) {
-                    getFirstLetter(mData[position - 1].nicknamePinYin)
+                    getFirstLetter(data[position - 1].nicknamePinYin)
                 } else {
                     " "
                 }

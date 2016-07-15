@@ -73,8 +73,12 @@ android {
             assets.srcDirs = ['src/main/assets']
             res.srcDirs =
                     [
-                            'src/main/res/layouts/contacts',
+                            'src/main/res/layouts/common',
+                            'src/main/res/layouts/component',
+                            'src/main/res/layouts/login',
                             'src/main/res/layouts/main',
+                            'src/main/res/layouts/search',
+                            'src/main/res/layouts/user',
                             'src/main/res/layouts',
                             'src/main/res'
                     ]
@@ -103,8 +107,12 @@ dependencies {
 
     def thirdLibs = rootProject.ext.thirdDependencies
     compile thirdLibs.gson
-    compile thirdLibs.circleIamgeView
     compile thirdLibs.glide
+    compile thirdLibs.titan
+    compile thirdLibs.circleIamgeView
+    compile thirdLibs.materialEdittext
+    compile thirdLibs.materialDialog
+    compile thirdLibs.easypermissions
 
     def testLibs = rootProject.ext.testDependencies
     testCompile testLibs.junit

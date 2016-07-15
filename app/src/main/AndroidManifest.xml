@@ -3,19 +3,44 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.danke.contacts">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
     <application
-        android:allowBackup="true"
+        android:name=".business.KContactsApp"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <activity
+            android:name=".business.user.ui.KContactsActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".business.search.ui.SearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Swipe"/>
+
+        <activity
+            android:name=".business.user.ui.UserSearchActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Swipe"/>
+
+        <activity
+            android:name=".business.user.ui.UserDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Swipe"/>
+
     </application>
 
 </manifest>

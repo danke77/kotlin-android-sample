@@ -17,7 +17,7 @@ ext {
     ]
 
     //Kotlin
-    kotlinV = '1.0.1-2'
+    kotlinV = '1.0.3'
     ankoV = '0.8.2'
 
     kotlinDependencies = [
@@ -28,13 +28,21 @@ ext {
 
     //Third Libs
     gsonV = '2.6.2'
-    circleIamgeViewV = '2.1.0'
     glideV = '3.7.0'
+    titanV = '0.1.1@aar'
+    circleIamgeViewV = '2.1.0'
+    materialEdittextV = '2.1.4'
+    materialDialogV = '0.8.6.1'
+    easypermissionsV = '0.1.8'
 
     thirdDependencies = [
-            gson           : "com.google.code.gson:gson:${gsonV}",
-            circleIamgeView: "de.hdodenhof:circleimageview:${circleIamgeViewV}",
-            glide          : "com.github.bumptech.glide:glide:${glideV}"
+            gson            : "com.google.code.gson:gson:${gsonV}",
+            glide           : "com.github.bumptech.glide:glide:${glideV}",
+            titan           : "com.youzan:titan:${titanV}",
+            circleIamgeView : "de.hdodenhof:circleimageview:${circleIamgeViewV}",
+            materialEdittext: "com.rengwuxian.materialedittext:library:${materialEdittextV}",
+            materialDialog  : "com.afollestad.material-dialogs:core:${materialDialogV}",
+            easypermissions : "pub.devrel:easypermissions:${easypermissionsV}"
     ]
 
     //Android Test Libs

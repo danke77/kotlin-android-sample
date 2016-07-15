@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/itemCatalogLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/common_padding"
+        android:paddingLeft="@dimen/common_padding"
+        android:paddingRight="@dimen/common_padding"
+        android:paddingStart="@dimen/common_padding"
+        android:paddingTop="5dp">
+
+        <TextView
+            android:id="@+id/itemCatalogText"
+            style="@style/singleLineTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"/>
+
+        <View
+            style="@style/commonHorizontalLine"
+            android:layout_marginEnd="@dimen/common_spacing"
+            android:layout_marginLeft="@dimen/common_spacing"
+            android:layout_marginRight="@dimen/common_spacing"
+            android:layout_marginStart="@dimen/common_spacing"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/userInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:paddingEnd="@dimen/common_padding"
+        android:paddingLeft="@dimen/common_padding"
+        android:paddingRight="@dimen/common_padding"
+        android:paddingStart="@dimen/common_padding"
+        android:paddingTop="8dp">
+
+        <com.danke.contacts.medium.widget.TextAvatar
+            android:id="@+id/userAvatar"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"/>
+
+        <TextView
+            android:id="@+id/userName"
+            style="@style/commonSingleLineTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/userAvatar"
+            android:layout_toEndOf="@id/userAvatar"
+            android:layout_toRightOf="@id/userAvatar"
+            android:paddingEnd="@dimen/common_padding"
+            android:paddingLeft="@dimen/common_padding"
+            android:paddingRight="@dimen/common_padding"
+            android:paddingStart="@dimen/common_padding"/>
+
+        <TextView
+            android:id="@+id/userDescription"
+            style="@style/descSingleLineTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/userAvatar"
+            android:layout_toEndOf="@id/userAvatar"
+            android:layout_toRightOf="@id/userAvatar"
+            android:paddingEnd="@dimen/common_padding"
+            android:paddingLeft="@dimen/common_padding"
+            android:paddingRight="@dimen/common_padding"
+            android:paddingStart="@dimen/common_padding"/>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,7 +1,10 @@
 package com.danke.contacts.business.user.ui
 
 import android.Manifest
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -25,7 +28,7 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
 
     companion object {
         val EXTRA_USER_INFO = "UserDetailActivity:USER_INFO"
-        const private val PERMISSION_RC_CALL_PHONE: Int = 100
+        const private val RC_CALL_PHONE_PERMISSION: Int = 100
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -90,7 +93,7 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
         messageFab.setOnClickListener { sendSms() }
     }
 
-    @AfterPermissionGranted(PERMISSION_RC_CALL_PHONE)
+    @AfterPermissionGranted(RC_CALL_PHONE_PERMISSION)
     private fun makePhoneCall() {
         if (EasyPermissions.hasPermissions(this, Manifest.permission.CALL_PHONE)) {
             if (!"".equals(mUserInfo?.mobile)) {
@@ -108,9 +111,9 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
         } else {
             EasyPermissions.requestPermissions(this,
                     getString(R.string.rationale_call_phone),
-                    R.string.ok,
+                    R.string.retry,
                     R.string.cancel,
-                    PERMISSION_RC_CALL_PHONE,
+                    RC_CALL_PHONE_PERMISSION,
                     Manifest.permission.CALL_PHONE)
         }
     }
@@ -124,6 +127,15 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
     }
 
     override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>?) {
+        EasyPermissions.checkDeniedPermissionsNeverAskAgain(this,
+                getString(R.string.rationale_ask_again),
+                R.string.settings,
+                R.string.cancel,
+                DialogInterface.OnClickListener {
+                    dialogInterface, i ->
+                    Snackbar.make(userDetailContent, R.string.settings_dialog_canceled, Snackbar.LENGTH_LONG).show()
+                },
+                perms)
     }
 
     override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>?) {
@@ -131,7 +143,15 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
+        if (RC_CALL_PHONE_PERMISSION == requestCode) {
+            EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (EasyPermissions.SETTINGS_REQ_CODE === requestCode) {
+        }
     }
 
 }

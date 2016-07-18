@@ -42,13 +42,13 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
-        menuInflater.inflate(R.menu.done, menu)
+        menuInflater.inflate(R.menu.share, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
-            R.id.action_edit -> {
+            R.id.action_share -> {
                 //share
             }
             else -> super.onOptionsItemSelected(item)

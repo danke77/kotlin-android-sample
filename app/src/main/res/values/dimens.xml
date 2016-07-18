@@ -7,8 +7,6 @@
     <dimen name="toolbar_elevation">4dp</dimen>
     <dimen name="toolbar_title_size">18sp</dimen>
     <dimen name="toolbar_menu_size">16sp</dimen>
-    <dimen name="toolbar_spinner_item_size">@dimen/toolbar_title_size</dimen>
-    <dimen name="toolbar_spinner_item_padding">4dp</dimen>
 
     <!-- collapsing toolbar layout -->
     <dimen name="collapsing_toolbar_layout_expanded_title_margin_start">48dp</dimen>
@@ -31,9 +29,6 @@
     <dimen name="item_text">16sp</dimen>
     <dimen name="item_text_desc">14sp</dimen>
     <dimen name="common_line_width">0.5dp</dimen>
-
-    <!-- main -->
-    <dimen name="main_nav_header_height">192dp</dimen>
 
     <!-- user detail -->
     <dimen name="user_detail_backdrop_height">256dp</dimen>

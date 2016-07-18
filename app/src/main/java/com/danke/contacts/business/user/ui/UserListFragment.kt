@@ -41,7 +41,7 @@ class UserListFragment private constructor() : AbsFragment() {
     private fun initRecyclerView() {
         mLinearLayoutManager = WrapContentLinearLayoutManager(mAttachActivity)
         userInfoRecyclerView.layoutManager = mLinearLayoutManager
-        userInfoRecyclerView.addItemDecoration(HorizontalDivider.Builder(mAttachActivity).colorResId(R.color.item_separate_line).build())
+        userInfoRecyclerView.addItemDecoration(HorizontalDivider.Builder(mAttachActivity).colorResId(R.color.colorDivider).build())
 
         mDefaultUserInfoAdapter = DefaultUserInfoAdapter(mAttachActivity!!) {
             startActivity<UserDetailActivity>(Pair(UserDetailActivity.EXTRA_USER_INFO, it))

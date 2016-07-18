@@ -95,9 +95,8 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
         if (EasyPermissions.hasPermissions(this, Manifest.permission.CALL_PHONE)) {
             if (!"".equals(mUserInfo?.mobile)) {
                 showDialog(this)
-                        .title(R.string.tip)
-                        .content(getString(R.string.call_phone) + mUserInfo?.mobile)
-                        .positiveText(R.string.confirm)
+                        .content(getString(R.string.action_call_phone) + mUserInfo?.mobile)
+                        .positiveText(R.string.ok)
                         .negativeText(R.string.cancel)
                         .onPositive {
                             materialDialog, dialogAction ->
@@ -108,8 +107,8 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
             }
         } else {
             EasyPermissions.requestPermissions(this,
-                    getString(R.string.permission_rationale_call_phone),
-                    R.string.confirm,
+                    getString(R.string.rationale_call_phone),
+                    R.string.ok,
                     R.string.cancel,
                     PERMISSION_RC_CALL_PHONE,
                     Manifest.permission.CALL_PHONE)
@@ -125,7 +124,6 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
     }
 
     override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>?) {
-        showToast(this, R.string.permission_cancel)
     }
 
     override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>?) {

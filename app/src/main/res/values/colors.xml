@@ -25,14 +25,9 @@
 
     <!-- toolbar -->
     <color name="toolbar_search_text_color">@android:color/white</color>
-    <color name="toolbar_search_text_hint_color">#e6e6e6</color>
+    <color name="toolbar_search_text_hint_color">#E6E6E6</color>
 
     <!-- common -->
     <color name="window_background">#FFF5F5F5</color>
-    <color name="item_text">@color/textPrimary</color>
-    <color name="item_text_sub">@color/textSecondary</color>
-    <color name="item_text_settings">@color/textSecondary</color>
-    <color name="item_text_tip">@color/textSecondary</color>
-    <color name="item_separate_line">@color/colorDivider</color>
 
 </resources>

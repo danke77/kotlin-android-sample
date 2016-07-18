@@ -16,8 +16,8 @@
         android:id="@+id/avatarText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="18sp"
+        android:gravity="center"
         android:textColor="@android:color/white"
-        android:gravity="center"/>
+        android:textSize="18sp"/>
 
 </FrameLayout>

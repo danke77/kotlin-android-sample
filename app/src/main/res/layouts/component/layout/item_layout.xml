@@ -18,7 +18,7 @@
             style="@style/singleLineTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/item_text_tip"
+            android:textColor="@color/textSecondary"
             android:textSize="@dimen/item_text_size"/>
 
         <FrameLayout
@@ -31,7 +31,7 @@
                 style="@style/singleLineTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/item_text"
+                android:textColor="@color/textPrimary"
                 android:textSize="@dimen/item_text_size"/>
 
             <com.danke.contacts.medium.widget.CommonEditText
@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/common_hint"
-                android:textColor="@color/item_text"
+                android:textColor="@color/textPrimary"
                 android:textSize="@dimen/item_text_size"
                 android:visibility="gone"/>
         </FrameLayout>

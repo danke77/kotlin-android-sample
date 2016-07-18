@@ -38,7 +38,7 @@ fun actionSendEmail(context: Context, emailAddress: String) {
     intent.putExtra(Intent.EXTRA_TEXT, "")
     intent.putExtra(Intent.EXTRA_SUBJECT, "")
     try {
-        context.startActivity(Intent.createChooser(intent, context.getString(R.string.send_email)))
+        context.startActivity(Intent.createChooser(intent, context.getString(R.string.action_send_email)))
     } catch (ex: android.content.ActivityNotFoundException) {
         showToast(context, R.string.no_email_client)
     }

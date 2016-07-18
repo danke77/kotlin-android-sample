@@ -5,7 +5,7 @@ ext {
     androidTargetSdkV = 24
     androidCompileSdkV = 24
 
-    //Android Support Libs
+    //Android Support Libraries
     appCompatV7V = '24.0.0'
     supportV13V = '24.0.0'
     supportDesignV = '24.0.0'
@@ -26,7 +26,7 @@ ext {
             ankoSqlite  : "org.jetbrains.anko:anko-sqlite:${ankoV}"
     ]
 
-    //Third Libs
+    //3rd-part Libraries
     gsonV = '2.6.2'
     glideV = '3.7.0'
     titanV = '0.1.1@aar'
@@ -34,18 +34,21 @@ ext {
     materialEdittextV = '2.1.4'
     materialDialogV = '0.8.6.1'
     easypermissionsV = '0.1.8'
+    leakcanaryV = '1.4-beta2'
 
     thirdDependencies = [
-            gson            : "com.google.code.gson:gson:${gsonV}",
-            glide           : "com.github.bumptech.glide:glide:${glideV}",
-            titan           : "com.youzan:titan:${titanV}",
-            circleIamgeView : "de.hdodenhof:circleimageview:${circleIamgeViewV}",
-            materialEdittext: "com.rengwuxian.materialedittext:library:${materialEdittextV}",
-            materialDialog  : "com.afollestad.material-dialogs:core:${materialDialogV}",
-            easypermissions : "pub.devrel:easypermissions:${easypermissionsV}"
+            gson             : "com.google.code.gson:gson:${gsonV}",
+            glide            : "com.github.bumptech.glide:glide:${glideV}",
+            titan            : "com.youzan:titan:${titanV}",
+            circleIamgeView  : "de.hdodenhof:circleimageview:${circleIamgeViewV}",
+            materialEdittext : "com.rengwuxian.materialedittext:library:${materialEdittextV}",
+            materialDialog   : "com.afollestad.material-dialogs:core:${materialDialogV}",
+            easypermissions  : "pub.devrel:easypermissions:${easypermissionsV}",
+            leakcanaryDebug  : "com.squareup.leakcanary:leakcanary-android:${leakcanaryV}",
+            leakcanaryRelease: "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryV}"
     ]
 
-    //Android Test Libs
+    //Android Test Libraries
     testJUnitV = "4.12"
 
     testDependencies = [

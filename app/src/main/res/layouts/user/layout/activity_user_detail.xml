@@ -77,43 +77,10 @@
                 android:layout_marginTop="@dimen/user_detail_item_line_margin"/>
 
             <com.danke.contacts.medium.widget.CommonItemView
-                android:id="@+id/userDepartment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemSubText="@string/department"/>
-
-            <View
-                style="@style/commonHorizontalLine"
-                android:layout_marginBottom="@dimen/user_detail_item_line_margin"
-                android:layout_marginTop="@dimen/user_detail_item_line_margin"/>
-
-            <com.danke.contacts.medium.widget.CommonItemView
-                android:id="@+id/userPosition"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemSubText="@string/position"/>
-
-            <View
-                style="@style/commonHorizontalLine"
-                android:layout_marginBottom="@dimen/user_detail_item_line_margin"
-                android:layout_marginTop="@dimen/user_detail_item_line_margin"/>
-
-            <com.danke.contacts.medium.widget.CommonItemView
                 android:id="@+id/userBirthday"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:itemSubText="@string/birthday"/>
-
-            <View
-                style="@style/commonHorizontalLine"
-                android:layout_marginBottom="@dimen/user_detail_item_line_margin"
-                android:layout_marginTop="@dimen/user_detail_item_line_margin"/>
-
-            <com.danke.contacts.medium.widget.CommonItemView
-                android:id="@+id/userJoinDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:itemSubText="@string/join_date"/>
 
             <View
                 style="@style/commonHorizontalLine"

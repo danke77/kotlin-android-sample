@@ -113,6 +113,8 @@ dependencies {
     compile thirdLibs.materialEdittext
     compile thirdLibs.materialDialog
     compile thirdLibs.easypermissions
+    debugCompile thirdLibs.leakcanaryDebug
+    releaseCompile thirdLibs.leakcanaryRelease
 
     def testLibs = rootProject.ext.testDependencies
     testCompile testLibs.junit

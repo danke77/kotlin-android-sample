@@ -51,6 +51,7 @@ open class DefaultUserInfoAdapter(val context: Context, val hasCatalog: Boolean 
                 itemView.userInfoLayout.setBackgroundResource(defaultUserInfoAdapter.mBackground)
                 itemView.userAvatar.setAvatar(avatar, nickname)
                 itemView.userName.text = nickname
+                itemView.userDescription.text = description
                 itemView.setOnClickListener({ itemClick(this) })
 
                 if (!defaultUserInfoAdapter.hasCatalog) {

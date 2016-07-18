@@ -13,7 +13,7 @@ import com.danke.contacts.R
 val NO_PLACE_HOLDER = -1
 
 fun ImageView.loadFromUrl(context: Context, url: String) {
-    loadFromUrl(context, url, R.mipmap.ic_launcher)
+    loadFromUrl(context, url, R.drawable.text_avatar_empty_background)
 }
 
 fun ImageView.loadFromUrl(context: Context, url: String, placeholderResId: Int) {

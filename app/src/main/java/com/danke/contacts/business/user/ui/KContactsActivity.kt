@@ -18,9 +18,9 @@ import com.danke.contacts.medium.extensions.getObjectListFromJsonArray
 import com.danke.contacts.medium.extensions.startActivity
 import com.danke.contacts.medium.utils.HandlerUtil
 import com.google.gson.JsonArray
-import com.google.gson.JsonObject
 import com.google.gson.JsonParser
 import kotlinx.android.synthetic.main.activity_contacts.*
+import java.io.ByteArrayOutputStream
 import java.util.*
 
 /**
@@ -144,28 +144,32 @@ class KContactsActivity : AbsToolbarActivity() {
     }
 
     private fun updateUserInfoList() {
-        val jsonString: String = "{\"id\":1,\"username\":\"asdgqwrg\",\"nickname\":\"asdgqwrg\",\"avatar\":\"\",\"birthday\":\"2016-01-22\",\"sex\":0,\"email\":\"email\",\"mobile\":\"12314141241\" }"
-        val parser: JsonParser = JsonParser()
-        val jsonObject: JsonObject = parser.parse(jsonString).asJsonObject
-        val jsonArray: JsonArray = JsonArray()
-        for (i in 0..100) {
-            jsonArray.add(jsonObject)
-        }
-
         loadStart()
 
         HandlerUtil().handle<UserInfoEntity>(object : HandlerUtil.HandlerCallBack {
-            override fun <T> threadRun(): List<T> {
+            override fun <T> runWorkThread(): List<T> {
+                val inputStream = this@KContactsActivity.resources.openRawResource(R.raw.contacts)
+                val byteArrayOutputStream = ByteArrayOutputStream()
+
+                var i: Int
+                i = inputStream.read()
+                while (i != -1) {
+                    byteArrayOutputStream.write(i)
+                    i = inputStream.read()
+                }
+
+                val jsonArray: JsonArray = JsonParser().parse(byteArrayOutputStream.toString()).asJsonArray
                 val userList = getObjectListFromJsonArray(jsonArray, UserInfoEntity::class.java)
                 for (item in userList) {
                     item.userNamePinYin = mPinyinParser?.getSelling(item.username)?.toLowerCase() as String
                     item.nicknamePinYin = mPinyinParser?.getSelling(item.nickname)?.toLowerCase() as String
                 }
                 Collections.sort(userList, mPinyinComparator)
+
                 return userList as List<T>
             }
 
-            override fun handlerCallBack(obj: Any) {
+            override fun mainThreadCallback(obj: Any) {
                 KContactsApp.instance.userList = obj as List<UserInfoEntity>
                 mContactsUserInfoAdapter?.data = KContactsApp.instance.userList
                 loadEnd()

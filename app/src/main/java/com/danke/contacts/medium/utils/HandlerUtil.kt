@@ -13,7 +13,7 @@ class HandlerUtil {
     private val handler = Handler(Handler.Callback { msg ->
         when (msg.what) {
             HANDLE_MESSAGE_THREAD_RUN -> if (null != callBack) {
-                callBack!!.handlerCallBack(msg.obj)
+                callBack!!.mainThreadCallback(msg.obj)
             }
         }
         false
@@ -22,16 +22,16 @@ class HandlerUtil {
     fun <T> handle(callBack: HandlerCallBack?) {
         this.callBack = callBack
         Thread(Runnable {
-            val list: List<T>? = callBack?.threadRun<T>()
+            val list: List<T>? = callBack?.runWorkThread<T>()
             val msg = handler.obtainMessage(HANDLE_MESSAGE_THREAD_RUN, list)
             handler.sendMessage(msg)
         }).start()
     }
 
     interface HandlerCallBack {
-        fun <T> threadRun(): List<T>
+        fun <T> runWorkThread(): List<T>
 
-        fun handlerCallBack(obj: Any)
+        fun mainThreadCallback(obj: Any)
     }
 
     companion object {

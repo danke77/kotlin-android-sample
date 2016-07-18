@@ -81,15 +81,13 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
     }
 
     private fun initAction() {
-        userMobile.setLeftButton(R.drawable.icon_sms, View.OnClickListener {
+        userMobile.setRightButton(R.drawable.ic_message, View.OnClickListener {
             sendSms()
         })
-        userMobile.setRightButton(R.drawable.icon_phone, View.OnClickListener {
-            makePhoneCall()
-        })
-        userEmail.setRightButton(R.drawable.icon_mail, View.OnClickListener {
+        userEmail.setRightButton(R.drawable.ic_mail, View.OnClickListener {
             sendEmail()
         })
+        phoneCallFab.setOnClickListener { makePhoneCall() }
     }
 
     @AfterPermissionGranted(PERMISSION_RC_CALL_PHONE)

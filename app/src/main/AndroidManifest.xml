@@ -18,8 +18,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".business.user.ui.KContactsActivity"
-            android:screenOrientation="portrait">
+            android:name=".business.user.ui.KContactsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -28,12 +27,10 @@
 
         <activity
             android:name=".business.user.ui.UserSearchActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Swipe"/>
 
         <activity
             android:name=".business.user.ui.UserDetailActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Swipe"/>
 
     </application>

@@ -130,6 +130,9 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
         actionSendEmail(this, mUserInfo?.email!!)
     }
 
+    override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>?) {
+    }
+
     override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>?) {
         EasyPermissions.checkDeniedPermissionsNeverAskAgain(this,
                 getString(R.string.rationale_ask_again),
@@ -140,9 +143,6 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
                     Snackbar.make(userDetailContent, R.string.settings_dialog_canceled, Snackbar.LENGTH_LONG).show()
                 },
                 perms)
-    }
-
-    override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>?) {
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {

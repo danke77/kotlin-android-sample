@@ -88,7 +88,7 @@ class KContactsActivity : AbsToolbarActivity() {
 
     private fun initFab() {
         mainFab.setOnClickListener({
-            Snackbar.make(it, "This is a Snackbar", Snackbar.LENGTH_LONG)
+            Snackbar.make(it, "Do something to add one card.", Snackbar.LENGTH_LONG)
                     .setAction("ACTION") {
 
                     }.show()

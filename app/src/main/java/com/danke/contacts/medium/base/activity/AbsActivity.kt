@@ -21,8 +21,8 @@ abstract class AbsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         if (toggleOverridePendingTransition()) {
             when (getOverridePendingTransitionMode()) {
-                TransitionMode.START -> overridePendingTransition(R.anim.left_in, R.anim.left_out)
-                TransitionMode.END -> overridePendingTransition(R.anim.right_in, R.anim.right_out)
+                TransitionMode.LEFT -> overridePendingTransition(R.anim.left_in, R.anim.left_out)
+                TransitionMode.RIGHT -> overridePendingTransition(R.anim.right_in, R.anim.right_out)
                 TransitionMode.TOP -> overridePendingTransition(R.anim.top_in, R.anim.top_out)
                 TransitionMode.BOTTOM -> overridePendingTransition(R.anim.bottom_in, R.anim.bottom_out)
                 TransitionMode.SCALE -> overridePendingTransition(R.anim.scale_in, R.anim.scale_out)
@@ -46,8 +46,8 @@ abstract class AbsActivity : AppCompatActivity() {
 
         if (toggleOverridePendingTransition()) {
             when (getOverridePendingTransitionMode()) {
-                TransitionMode.START -> overridePendingTransition(R.anim.left_in, R.anim.left_out)
-                TransitionMode.END -> overridePendingTransition(R.anim.right_in, R.anim.right_out)
+                TransitionMode.LEFT -> overridePendingTransition(R.anim.left_in, R.anim.left_out)
+                TransitionMode.RIGHT -> overridePendingTransition(R.anim.right_in, R.anim.right_out)
                 TransitionMode.TOP -> overridePendingTransition(R.anim.top_in, R.anim.top_out)
                 TransitionMode.BOTTOM -> overridePendingTransition(R.anim.bottom_in, R.anim.bottom_out)
                 TransitionMode.SCALE -> overridePendingTransition(R.anim.scale_in, R.anim.scale_out)
@@ -82,7 +82,7 @@ abstract class AbsActivity : AppCompatActivity() {
      * overridePendingTransition mode
      */
     enum class TransitionMode {
-        START, END, TOP, BOTTOM, SCALE, FADE, NONE
+        LEFT, RIGHT, TOP, BOTTOM, SCALE, FADE, NONE
     }
 
     /**

@@ -5,8 +5,8 @@
     <string name="action_search">Search</string>
     <string name="action_share">Share</string>
     <string name="action_call_phone">Call Phone: </string>
-    <string name="action_send_email">Please Choose Email Client</string>
-    <string name="no_email_client">"These's no Email Client"</string>
+    <string name="action_send_email">Please choose an email client</string>
+    <string name="no_email_client">"These's no email client"</string>
 
     <!-- common -->
     <string name="common_hint">unfilled</string>

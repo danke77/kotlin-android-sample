@@ -52,7 +52,10 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.action_share -> {
-                //share
+                Snackbar.make(userDetailContent, "Do something to share this card.", Snackbar.LENGTH_LONG)
+                        .setAction("ACTION") {
+
+                        }.show()
             }
             else -> super.onOptionsItemSelected(item)
         }

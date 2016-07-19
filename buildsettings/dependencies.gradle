@@ -9,11 +9,13 @@ ext {
     appCompatV7V = '24.0.0'
     supportV13V = '24.0.0'
     supportDesignV = '24.0.0'
+    cardviewV = '24.0.0'
 
     androidDependencies = [
             appcompatV7  : "com.android.support:appcompat-v7:${appCompatV7V}",
             supportV13   : "com.android.support:support-v13:${supportV13V}",
-            supportDesign: "com.android.support:design:${supportDesignV}"
+            supportDesign: "com.android.support:design:${supportDesignV}",
+            cardview     : "com.android.support:cardview-v7:${cardviewV}"
     ]
 
     //Kotlin

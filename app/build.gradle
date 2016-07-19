@@ -99,6 +99,7 @@ dependencies {
     compile androidLibs.appcompatV7
     compile androidLibs.supportV13
     compile androidLibs.supportDesign
+    compile androidLibs.cardview
 
     def kotlinLibs = rootProject.ext.kotlinDependencies
     compile kotlinLibs.kotlinStdlib

@@ -25,6 +25,7 @@
     <!-- common -->
     <dimen name="common_padding">16dp</dimen>
     <dimen name="common_spacing">16dp</dimen>
+    <dimen name="card_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="item_text">16sp</dimen>
     <dimen name="item_text_desc">14sp</dimen>

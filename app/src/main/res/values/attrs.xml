@@ -39,7 +39,7 @@
     </declare-styleable>
 
     <!-- ItemView -->
-    <declare-styleable name="ItemView">
+    <declare-styleable name="AmazingItemView">
         <attr name="itemText" format="string"/>
         <attr name="itemSubText" format="string"/>
         <attr name="itemButtonLeft" format="reference"/>

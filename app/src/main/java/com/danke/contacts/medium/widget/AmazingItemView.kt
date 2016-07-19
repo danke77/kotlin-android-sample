@@ -13,7 +13,7 @@ import com.rengwuxian.materialedittext.MaterialEditText
  * @author danke (https://github.com/danke77)
  * @date 16/7/9
  */
-class CommonItemView : FrameLayout {
+class AmazingItemView : FrameLayout {
 
     private var itemEditView: CommonEditText? = null
     private var itemTextView: TextView? = null
@@ -41,11 +41,11 @@ class CommonItemView : FrameLayout {
     }
 
     private fun getAttrs(context: Context, attrs: AttributeSet) {
-        val ta = context.obtainStyledAttributes(attrs, R.styleable.ItemView)
-        itemText = ta.getString(R.styleable.ItemView_itemText)
-        itemSubText = ta.getString(R.styleable.ItemView_itemSubText)
-        itemButtonLeft = ta.getResourceId(R.styleable.ItemView_itemButtonLeft, 0)
-        itemButtonRight = ta.getResourceId(R.styleable.ItemView_itemButtonRight, 0)
+        val ta = context.obtainStyledAttributes(attrs, R.styleable.AmazingItemView)
+        itemText = ta.getString(R.styleable.AmazingItemView_itemText)
+        itemSubText = ta.getString(R.styleable.AmazingItemView_itemSubText)
+        itemButtonLeft = ta.getResourceId(R.styleable.AmazingItemView_itemButtonLeft, 0)
+        itemButtonRight = ta.getResourceId(R.styleable.AmazingItemView_itemButtonRight, 0)
         ta.recycle()
     }
 

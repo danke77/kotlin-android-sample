@@ -81,6 +81,7 @@ class UserDetailActivity : AbsSwipeBackActivity(), EasyPermissions.PermissionCal
             Sex.UNKNOWN -> sex = ""
         }
         userSex.setItemText(sex)
+        userDescription.setItemText(mUserInfo?.description)
     }
 
     private fun initAction() {

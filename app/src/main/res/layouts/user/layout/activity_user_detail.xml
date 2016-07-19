@@ -52,46 +52,85 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="@dimen/common_padding">
+            android:paddingTop="24dp">
 
-            <com.danke.contacts.medium.widget.CommonItemView
-                android:id="@+id/userMobile"
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:itemSubText="@string/mobile"/>
+                android:layout_margin="@dimen/card_margin">
 
-            <View
-                style="@style/commonHorizontalLine"
-                android:layout_marginBottom="@dimen/user_detail_item_line_margin"
-                android:layout_marginTop="@dimen/user_detail_item_line_margin"/>
+                <com.danke.contacts.medium.widget.AmazingItemView
+                    android:id="@+id/userMobile"
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:itemSubText="@string/mobile"/>
 
-            <com.danke.contacts.medium.widget.CommonItemView
-                android:id="@+id/userEmail"
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:itemSubText="@string/email"/>
+                android:layout_marginBottom="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin">
 
-            <View
-                style="@style/commonHorizontalLine"
-                android:layout_marginBottom="@dimen/user_detail_item_line_margin"
-                android:layout_marginTop="@dimen/user_detail_item_line_margin"/>
+                <com.danke.contacts.medium.widget.AmazingItemView
+                    android:id="@+id/userEmail"
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:itemSubText="@string/email"/>
 
-            <com.danke.contacts.medium.widget.CommonItemView
-                android:id="@+id/userBirthday"
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:itemSubText="@string/birthday"/>
+                android:layout_marginBottom="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin">
 
-            <View
-                style="@style/commonHorizontalLine"
-                android:layout_marginBottom="@dimen/user_detail_item_line_margin"
-                android:layout_marginTop="@dimen/user_detail_item_line_margin"/>
+                <com.danke.contacts.medium.widget.AmazingItemView
+                    android:id="@+id/userBirthday"
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:itemSubText="@string/birthday"/>
 
-            <com.danke.contacts.medium.widget.CommonItemView
-                android:id="@+id/userSex"
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:itemSubText="@string/sex"/>
+                android:layout_marginBottom="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin">
+
+                <com.danke.contacts.medium.widget.AmazingItemView
+                    android:id="@+id/userSex"
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:itemSubText="@string/sex"/>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/card_margin"
+                android:layout_marginLeft="@dimen/card_margin"
+                android:layout_marginRight="@dimen/card_margin">
+
+                <com.danke.contacts.medium.widget.AmazingItemView
+                    android:id="@+id/userDescription"
+                    style="@style/Widget.CardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:itemSubText="@string/description"/>
+
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
 

@@ -4,7 +4,7 @@
     <!-- action -->
     <string name="action_search">Search</string>
     <string name="action_share">Share</string>
-    <string name="action_call_phone">Call Phone: </string>
+    <string name="action_call_phone">"Call Phone: "</string>
     <string name="action_send_email">Please choose an email client</string>
     <string name="no_email_client">"These's no email client"</string>
 
@@ -29,5 +29,12 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="retry">Re-try</string>
+
+    <!-- night mode -->
+    <string name="menu_night_mode">Night Mode</string>
+    <string name="menu_night_mode_system">Follow System</string>
+    <string name="menu_night_mode_day">Day (always)</string>
+    <string name="menu_night_mode_night">Night (always)</string>
+    <string name="menu_night_mode_auto">Auto</string>
 
 </resources>

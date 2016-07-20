@@ -31,7 +31,7 @@
                 style="@style/singleLineTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/textPrimary"
+                android:textAppearance="?attr/textAppearanceListItem"
                 android:textSize="@dimen/item_text_size"/>
 
             <com.danke.contacts.medium.widget.CommonEditText

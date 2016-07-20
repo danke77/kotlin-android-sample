@@ -17,8 +17,9 @@
     </style>
 
     <style name="commonSingleLineTextView" parent="@style/singleLineTextView">
-        <item name="android:textColor">@color/textPrimary</item>
-        <item name="android:textSize">@dimen/item_text</item>
+        <item name="android:textAppearance">?attr/textAppearanceListItem</item>
+        <!--<item name="android:textColor">@color/textPrimary</item>-->
+        <!--<item name="android:textSize">@dimen/item_text</item>-->
     </style>
 
     <style name="descSingleLineTextView" parent="@style/singleLineTextView">

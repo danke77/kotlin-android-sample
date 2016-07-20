@@ -60,17 +60,15 @@ class KContactsActivity : AbsToolbarActivity() {
         moveTaskToBack(true)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         super.onCreateOptionsMenu(menu)
         menuInflater.inflate(R.menu.search, menu)
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when (item?.itemId) {
-            R.id.action_search -> {
-                startActivity<UserSearchActivity>()
-            }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_search -> startActivity<UserSearchActivity>()
             else -> super.onOptionsItemSelected(item)
         }
         return super.onOptionsItemSelected(item)
@@ -114,7 +112,7 @@ class KContactsActivity : AbsToolbarActivity() {
         contactsSideBar.setTextView(contactsFloatLetter)
         contactsSideBar.setOnTouchingLetterChangedListener(object : OnTouchingLetterChangedListener {
             override fun onTouchingLetterChanged(s: String) {
-                //该字母首次出现的位置
+                // the position this letter first appears
                 val position = mContactsUserInfoAdapter?.getPositionForSection(s[0].toInt()) as Int
                 if (position != -1) {
                     mLinearLayoutManager?.scrollToPositionWithOffset(position, 0)

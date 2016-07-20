@@ -11,7 +11,7 @@
         android:id="@+id/mainAppbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="@dimen/toolbar_elevation"
+        android:elevation="@dimen/default_elevation"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <include layout="@layout/toolbar"/>
@@ -43,7 +43,7 @@
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:background="@drawable/show_head_toast_background"
-            android:elevation="4dp"
+            android:elevation="@dimen/default_elevation"
             android:gravity="center"
             android:textColor="@android:color/white"
             android:textSize="32sp"

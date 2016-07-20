@@ -4,7 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <!-- toolbar -->
-    <dimen name="toolbar_elevation">4dp</dimen>
     <dimen name="toolbar_title_size">18sp</dimen>
     <dimen name="toolbar_menu_size">16sp</dimen>
 
@@ -23,13 +22,14 @@
     <dimen name="common_edit_text_bottom_size">12sp</dimen>
 
     <!-- common -->
-    <dimen name="common_padding">16dp</dimen>
-    <dimen name="common_spacing">16dp</dimen>
+    <dimen name="default_elevation">4dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="default_spacing">16dp</dimen>
+    <dimen name="default_line_width">0.5dp</dimen>
     <dimen name="card_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="item_text">16sp</dimen>
     <dimen name="item_text_desc">14sp</dimen>
-    <dimen name="common_line_width">0.5dp</dimen>
 
     <!-- user detail -->
     <dimen name="user_detail_backdrop_height">256dp</dimen>

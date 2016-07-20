@@ -76,10 +76,9 @@ class SideBar : View {
                     mTextDialog!!.visibility = View.INVISIBLE
                 }
             }
-
             else -> {
                 setBackgroundResource(R.drawable.sidebar_background)
-                //判断选中字母是否发生改变
+                // judge if chosen letter changed
                 if (oldChoose != c) {
                     if (c >= 0 && c < SideBar.Companion.BAR_VALUE.size) {
                         listener?.onTouchingLetterChanged(SideBar.Companion.BAR_VALUE[c])

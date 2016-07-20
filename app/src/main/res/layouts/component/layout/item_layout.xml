@@ -51,10 +51,10 @@
         android:layout_width="@dimen/item_image_button_size"
         android:layout_height="@dimen/item_image_button_size"
         android:layout_gravity="center_vertical"
-        android:layout_marginEnd="@dimen/common_spacing"
-        android:layout_marginLeft="@dimen/common_spacing"
-        android:layout_marginRight="@dimen/common_spacing"
-        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginEnd="@dimen/default_spacing"
+        android:layout_marginLeft="@dimen/default_spacing"
+        android:layout_marginRight="@dimen/default_spacing"
+        android:layout_marginStart="@dimen/default_spacing"
         android:padding="@dimen/item_image_button_padding"
         android:visibility="gone"/>
 

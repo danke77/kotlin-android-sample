@@ -75,9 +75,6 @@ android {
                     [
                             'src/main/res/layouts/common',
                             'src/main/res/layouts/component',
-                            'src/main/res/layouts/login',
-                            'src/main/res/layouts/main',
-                            'src/main/res/layouts/search',
                             'src/main/res/layouts/user',
                             'src/main/res/layouts',
                             'src/main/res'

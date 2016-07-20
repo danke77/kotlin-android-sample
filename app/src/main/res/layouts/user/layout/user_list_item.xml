@@ -11,10 +11,10 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingEnd="@dimen/common_padding"
-        android:paddingLeft="@dimen/common_padding"
-        android:paddingRight="@dimen/common_padding"
-        android:paddingStart="@dimen/common_padding"
+        android:paddingEnd="@dimen/default_padding"
+        android:paddingLeft="@dimen/default_padding"
+        android:paddingRight="@dimen/default_padding"
+        android:paddingStart="@dimen/default_padding"
         android:paddingTop="5dp">
 
         <TextView
@@ -27,10 +27,10 @@
 
         <View
             style="@style/commonHorizontalLine"
-            android:layout_marginEnd="@dimen/common_spacing"
-            android:layout_marginLeft="@dimen/common_spacing"
-            android:layout_marginRight="@dimen/common_spacing"
-            android:layout_marginStart="@dimen/common_spacing"/>
+            android:layout_marginEnd="@dimen/default_spacing"
+            android:layout_marginLeft="@dimen/default_spacing"
+            android:layout_marginRight="@dimen/default_spacing"
+            android:layout_marginStart="@dimen/default_spacing"/>
     </LinearLayout>
 
     <RelativeLayout
@@ -38,10 +38,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="8dp"
-        android:paddingEnd="@dimen/common_padding"
-        android:paddingLeft="@dimen/common_padding"
-        android:paddingRight="@dimen/common_padding"
-        android:paddingStart="@dimen/common_padding"
+        android:paddingEnd="@dimen/default_padding"
+        android:paddingLeft="@dimen/default_padding"
+        android:paddingRight="@dimen/default_padding"
+        android:paddingStart="@dimen/default_padding"
         android:paddingTop="8dp">
 
         <com.danke.contacts.medium.widget.TextAvatar
@@ -60,10 +60,10 @@
             android:layout_alignTop="@id/userAvatar"
             android:layout_toEndOf="@id/userAvatar"
             android:layout_toRightOf="@id/userAvatar"
-            android:paddingEnd="@dimen/common_padding"
-            android:paddingLeft="@dimen/common_padding"
-            android:paddingRight="@dimen/common_padding"
-            android:paddingStart="@dimen/common_padding"/>
+            android:paddingEnd="@dimen/default_padding"
+            android:paddingLeft="@dimen/default_padding"
+            android:paddingRight="@dimen/default_padding"
+            android:paddingStart="@dimen/default_padding"/>
 
         <TextView
             android:id="@+id/userDescription"
@@ -73,10 +73,10 @@
             android:layout_alignBottom="@id/userAvatar"
             android:layout_toEndOf="@id/userAvatar"
             android:layout_toRightOf="@id/userAvatar"
-            android:paddingEnd="@dimen/common_padding"
-            android:paddingLeft="@dimen/common_padding"
-            android:paddingRight="@dimen/common_padding"
-            android:paddingStart="@dimen/common_padding"/>
+            android:paddingEnd="@dimen/default_padding"
+            android:paddingLeft="@dimen/default_padding"
+            android:paddingRight="@dimen/default_padding"
+            android:paddingStart="@dimen/default_padding"/>
 
     </RelativeLayout>
 </LinearLayout>

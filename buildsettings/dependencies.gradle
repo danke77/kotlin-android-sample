@@ -1,6 +1,6 @@
 ext {
     //Android
-    androidBuildToolsV = '24.0.0'
+    androidBuildToolsV = '24.0.1'
     androidMinSdkV = 15
     androidTargetSdkV = 24
     androidCompileSdkV = 24

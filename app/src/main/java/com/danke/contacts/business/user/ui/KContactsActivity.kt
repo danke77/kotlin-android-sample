@@ -98,7 +98,7 @@ class KContactsActivity : AbsToolbarActivity() {
         }
     }
 
-    override fun isStatusBarTransparent() = true
+    override fun isStatusBarTransparent() = false
 
     override fun toggleOverridePendingTransition() = false
 

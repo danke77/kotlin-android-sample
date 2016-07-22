@@ -21,10 +21,12 @@ abstract class AbsToolbarActivity : AbsActivity(), ToolbarManager {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP
-                && isStatusBarTransparent()) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-            window.statusBarColor = color(android.R.color.transparent)
+            window.statusBarColor = color(
+                    if (isStatusBarTransparent()) android.R.color.transparent
+                    else R.color.colorPrimaryDark)
         }
     }
 

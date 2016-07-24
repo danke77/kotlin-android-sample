@@ -1,12 +1,17 @@
 KContacts
 ===
 
-KContacts is a practice sample of **Contacts** in **Kotlin** language with **Material Design**.
+KContacts is a practice sample of **Contacts** in **Kotlin & Java** language with **Material Design**.
+
+Sample
+---
+
+![](art/sample.gif)
 
 Features
 ---
 
-* **Contacts** which can **Fast Locate** by touching **Side Bar** of char "A-Z" and "#"
+* **Contacts** which can **Fast Locate** by touching **Side Bar** of chars "A-Z" and "#"
 * **Fast Search User** with Chinese Pinyin, user name, nick name, mobile and email
 * target **Android M Permissions**
 * **Material Design** by android support design package

@@ -3,11 +3,6 @@ KContacts
 
 KContacts is a practice sample of **Contacts** in **Kotlin** language with **Material Design**.
 
-Sample
----
-
-![](art/sample.gif)
-
 Features
 ---
 

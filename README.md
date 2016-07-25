@@ -17,7 +17,7 @@ Features
 * **Material Design** by android support design package
 * A sample in **Kotlin** language
 * **Swipe Right to Go Back** like iOS application
-* awesome **Text Avatar** which show last two chars if the uri of image is empty
+* **Text Avatar** which show last two chars if the uri of image is empty
 * support settings of **Night Mode**
 * **More coming soon!**
 

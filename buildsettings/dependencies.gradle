@@ -6,10 +6,10 @@ ext {
     androidCompileSdkV = 24
 
     //Android Support Libraries
-    appCompatV7V = '24.0.0'
-    supportV13V = '24.0.0'
-    supportDesignV = '24.0.0'
-    cardviewV = '24.0.0'
+    appCompatV7V = '24.1.1'
+    supportV13V = '24.1.1'
+    supportDesignV = '24.1.1'
+    cardviewV = '24.1.1'
 
     androidDependencies = [
             appcompatV7  : "com.android.support:appcompat-v7:${appCompatV7V}",

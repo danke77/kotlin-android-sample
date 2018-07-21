@@ -1,7 +1,6 @@
 package com.danke.contacts.medium.base.activity
 
 import android.os.Bundle
-import android.view.View
 import com.danke.contacts.medium.component.swipe.SwipeBackActivityBase
 import com.danke.contacts.medium.component.swipe.SwipeBackActivityHelper
 import com.danke.contacts.medium.component.swipe.SwipeBackUtils
@@ -24,15 +23,6 @@ abstract class AbsSwipeBackActivity : AbsBackActivity(), SwipeBackActivityBase {
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         mHelper?.onPostCreate()
-    }
-
-    override fun findViewById(id: Int): View? {
-        val view = super.findViewById(id)
-        if (view == null && mHelper != null) {
-            return mHelper?.findViewById(id)
-        }
-
-        return super.findViewById(id)
     }
 
     override fun getSwipeBackLayout() = mHelper?.swipeBackLayout

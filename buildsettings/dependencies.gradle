@@ -1,14 +1,15 @@
 ext {
     //Android
-    androidMinSdkV = 16
-    androidTargetSdkV = 27
-    androidCompileSdkV = 27
+    androidBuildToolsV = '24.0.1'
+    androidMinSdkV = 15
+    androidTargetSdkV = 24
+    androidCompileSdkV = 24
 
     //Android Support Libraries
-    appCompatV7V = '27.1.1'
-    supportV13V = '27.1.1'
-    supportDesignV = '27.1.1'
-    cardviewV = '27.1.1'
+    appCompatV7V = '24.1.1'
+    supportV13V = '24.1.1'
+    supportDesignV = '24.1.1'
+    cardviewV = '24.1.1'
 
     androidDependencies = [
             appcompatV7  : "com.android.support:appcompat-v7:${appCompatV7V}",
@@ -18,7 +19,7 @@ ext {
     ]
 
     //Kotlin
-    kotlinV = '1.2.41'
+    kotlinV = '1.0.3'
     ankoV = '0.8.2'
 
     kotlinDependencies = [
@@ -28,8 +29,8 @@ ext {
     ]
 
     //3rd-part Libraries
-    gsonV = '2.8.5'
-    glideV = '4.7.1'
+    gsonV = '2.6.2'
+    glideV = '3.7.0'
     titanV = '0.1.1@aar'
     circleIamgeViewV = '2.1.0'
     materialEdittextV = '2.1.4'

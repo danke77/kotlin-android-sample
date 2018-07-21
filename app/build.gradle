@@ -6,6 +6,7 @@ android {
     def globalConfig = rootProject.extensions.getByName("ext")
 
     compileSdkVersion globalConfig.getAt("androidCompileSdkV")
+    buildToolsVersion globalConfig.getAt("androidBuildToolsV")
 
     defaultConfig {
         applicationId "${appId}"
@@ -89,30 +90,30 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 
     def androidLibs = rootProject.ext.androidDependencies
-    implementation androidLibs.appcompatV7
-    implementation androidLibs.supportV13
-    implementation androidLibs.supportDesign
-    implementation androidLibs.cardview
+    compile androidLibs.appcompatV7
+    compile androidLibs.supportV13
+    compile androidLibs.supportDesign
+    compile androidLibs.cardview
 
     def kotlinLibs = rootProject.ext.kotlinDependencies
-    implementation kotlinLibs.kotlinStdlib
-    implementation kotlinLibs.ankoCommon
-    implementation kotlinLibs.ankoSqlite
+    compile kotlinLibs.kotlinStdlib
+    compile kotlinLibs.ankoCommon
+    compile kotlinLibs.ankoSqlite
 
     def thirdLibs = rootProject.ext.thirdDependencies
-    implementation thirdLibs.gson
-    implementation thirdLibs.glide
-    implementation thirdLibs.titan
-    implementation thirdLibs.circleIamgeView
-    implementation thirdLibs.materialEdittext
-    implementation thirdLibs.materialDialog
-    implementation thirdLibs.easypermissions
-    debugApi thirdLibs.leakcanaryDebug
-    releaseApi thirdLibs.leakcanaryRelease
+    compile thirdLibs.gson
+    compile thirdLibs.glide
+    compile thirdLibs.titan
+    compile thirdLibs.circleIamgeView
+    compile thirdLibs.materialEdittext
+    compile thirdLibs.materialDialog
+    compile thirdLibs.easypermissions
+    debugCompile thirdLibs.leakcanaryDebug
+    releaseCompile thirdLibs.leakcanaryRelease
 
     def testLibs = rootProject.ext.testDependencies
-    testImplementation testLibs.junit
+    testCompile testLibs.junit
 }
